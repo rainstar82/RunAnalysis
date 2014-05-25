@@ -3,7 +3,7 @@ RunAnalysis
 Getting and Cleaning Data Course Project Code Book 
 Anahita Saghafi 25/05/2014
 
-Steps
+##Steps
 
 1. Set working directory and check it
 setwd("C:\\Users\\anahitas\\Documents\\coursera\\Getting and Cleaning Data\\getdata-projectfiles-UCI HAR Dataset\\UCI HAR Dataset")
