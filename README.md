@@ -47,8 +47,7 @@ getwd()
  
 20. OrderAverageMegedSubsetData by SubjectIDs ##180 obs. of 68 variables
 
-21. Write the second data set "AverageMegedSubsetData" to complete the course project.
-## 10299 obs. of 68 variables
+21. Write the second data set "AverageMegedSubsetData" to complete the course project. ## 10299 obs. of 68 variables
 
 
 ==================================================================
@@ -59,8 +58,7 @@ Reference Data Set:
 Reference: 
 
 ==================================================================
-Human Activity Recognition Using Smartphones Dataset
-Version 1.0
+Human Activity Recognition Using Smartphones Dataset - Version 1.0
 ==================================================================
 Jorge L. Reyes-Ortiz, Davide Anguita, Alessandro Ghio, Luca Oneto.
 Smartlab - Non Linear Complex Systems Laboratory
