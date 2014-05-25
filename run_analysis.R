@@ -85,4 +85,4 @@ AverageMergedSubSetData <- mergedSubsetDataTable[, lapply(.SD, mean), by=c("Subj
 AverageMergedSubSetData <- AverageMergedSubSetData[order(AverageMergedSubSetData$SubjectID),] ##180 obs. of 68 variables
 
 ## Write the second data set "AverageMegedSubsetData" to complete the course project.
-write.table(AverageMergedSubSetData, "averageCleanedData.txt") ## 10299 obs. of 67 variables
+write.table(AverageMergedSubSetData, "averageCleanedData.txt") ## 10299 obs. of 68 variables
