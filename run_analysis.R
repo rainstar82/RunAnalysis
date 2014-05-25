@@ -73,6 +73,7 @@ mergedSubsetData$SubjectID <- mergedSetSubjects$SubjectID ## 10299 obs of 68 var
 colnames(mergedSubsetData) <- gsub("\\.+mean\\.+", colnames(mergedSubsetData), replacement=".Mean")
 colnames(mergedSubsetData) <- gsub("\\.+std\\.+",  colnames(mergedSubsetData), replacement=".Std")
 
+
 ## Finally write clean data with descriptive activity  names into mergedSubsetData.txt
 write.table(mergedSubsetData, "mergedSubsetData.txt") ##10299 obs. of 68 variables
 
@@ -87,11 +88,6 @@ AverageMergedSubSetData <- mergedSubsetDataTable[, lapply(.SD, mean), by=c("Subj
 
 ##OrderAverageMegedSubsetData by SubjectIDs
 AverageMergedSubSetData <- AverageMergedSubSetData[order(AverageMergedSubSetData$SubjectID),] ##180 obs. of 68 variables
-
-
-##Update Columns Names
-colnames(AverageMergedSubSetData) <- gsub("\\.+mean\\.+", colnames(AverageMergedSubSetData), replacement=".Mean")
-colnames(AverageMergedSubSetData) <- gsub("\\.+std\\.+",  colnames(AverageMergedSubSetData), replacement=".Std")
 
 
 ## Write the second data set "AverageMegedSubsetData" to complete the course project.
