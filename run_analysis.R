@@ -6,13 +6,13 @@
 ##International Workshop of Ambient Assisted Living (IWAAL 2012). Vitoria-Gasteiz, Spain. Dec 2012
 
 ##Instruction
-##You should create one R script called run_analysis.R that does the following. 
-##Merges the training and the test sets to create one data set.
-##Extracts only the measurements on the mean and standard deviation for each measurement. 
-##Uses descriptive activity names to name the activities in the data set
-##Appropriately labels the data set with descriptive activity names. 
-##Creates a second, independent tidy data set with the average of each variable for each activity and each subject. 
-##Good luck!
+##Create one R script called run_analysis.R that does the following. 
+## 1. Merges the training and the test sets to create one data set.
+## 2. Extracts only the measurements on the mean and standard deviation for each measurement. 
+## 3. Uses descriptive activity names to name the activities in the data set
+## 4. Appropriately labels the data set with descriptive activity names. 
+## 5. Creates a second, independent tidy data set with the average of each variable for each activity and each subject. 
+ 
 
 
 ##Solution
@@ -69,6 +69,10 @@ mergedSubsetData <- mergedSetData[,subsetFeatures] ## 10299 obs of 66 variables
 mergedSubsetData$ActivityLabelName <- mergedSetActivityLabels$ActivityLabelName ## 10299 obs. of 67 variables
 mergedSubsetData$SubjectID <- mergedSetSubjects$SubjectID ## 10299 obs of 68 variables
 
+##Update Columns Names
+colnames(mergedSubsetData) <- gsub("\\.+mean\\.+", colnames(mergedSubsetData), replacement=".Mean")
+colnames(mergedSubsetData) <- gsub("\\.+std\\.+",  colnames(mergedSubsetData), replacement=".Std")
+
 ## Finally write clean data with descriptive activity  names into mergedSubsetData.txt
 write.table(mergedSubsetData, "mergedSubsetData.txt") ##10299 obs. of 68 variables
 
@@ -84,5 +88,11 @@ AverageMergedSubSetData <- mergedSubsetDataTable[, lapply(.SD, mean), by=c("Subj
 ##OrderAverageMegedSubsetData by SubjectIDs
 AverageMergedSubSetData <- AverageMergedSubSetData[order(AverageMergedSubSetData$SubjectID),] ##180 obs. of 68 variables
 
+
+##Update Columns Names
+colnames(AverageMergedSubSetData) <- gsub("\\.+mean\\.+", colnames(AverageMergedSubSetData), replacement=".Mean")
+colnames(AverageMergedSubSetData) <- gsub("\\.+std\\.+",  colnames(AverageMergedSubSetData), replacement=".Std")
+
+
 ## Write the second data set "AverageMegedSubsetData" to complete the course project.
-write.table(AverageMergedSubSetData, "averageCleanedData.txt") ## 10299 obs. of 68 variables
+write.table(AverageMergedSubSetData, "averageCleanedData.txt") ## 10299 obs. of 67 variables
